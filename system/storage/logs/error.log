@@ -1,0 +1,3 @@
+2020-11-17 11:52:42 - PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'www' in /html/virtual.com/opencart/system/library/db/mysqli.php on line 7
+2020-11-17 11:52:42 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/virtual.com/opencart/system/library/db/mysqli.php on line 10
+2020-11-17 11:52:42 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/virtual.com/opencart/system/library/db/mysqli.php on line 10
