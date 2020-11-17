@@ -12,8 +12,6 @@ define('HTTP_SERVER', 'http://' . $ip . '/');
 // HTTPS
 define('HTTPS_SERVER', 'http://' . $ip . '/');
 
-
-
 // DIR
 define('DIR_APPLICATION', $root . '/catalog/');
 define('DIR_SYSTEM', $root . '/system/');
