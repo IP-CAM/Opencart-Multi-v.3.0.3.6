@@ -2,6 +2,7 @@
 - Primeira vez carregar dados do DB opencart apos iniciar o docker
 ```bash
 docker exec -i mysql-opencart mysql -uroot -p1234 < db/opencartclean.sql
+docker exec -i mysql-sso mysql -usso -psso < db/user.sql
 ```
 
 - Iniciar Docker

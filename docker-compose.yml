@@ -7,13 +7,33 @@ services:
         container_name: mysql-opencart
         restart: always
         environment:
-          MYSQL_ROOT_PASSWORD: 1234
+            MYSQL_ROOT_PASSWORD: 1234
+            MYSQL_USER: opencart
+            MYSQL_PASSWORD: opencart
         volumes: 
             - ./docker/mysql:/var/lib/mysql
         networks:
             - opencart-network
         ports: 
             - "3307:3306"
+
+    sso:
+        image: mariadb
+        command: --default-authentication-plugin=mysql_native_password
+        container_name: mysql-sso
+        restart: always
+        environment:
+            MYSQL_USER: sso
+            MYSQL_PASSWORD: sso
+            MYSQL_TCP_PORT: 3308
+            MYSQL_ROOT_PASSWORD: 1234
+        volumes: 
+            - ./docker/sso:/var/lib/mysql
+            # - ./my.cnf:/etc/mysql/my.cnf
+        networks:
+            - opencart-network
+        ports: 
+            - "3308:3308"
 
     php:
         build:
@@ -28,6 +48,7 @@ services:
             - ./docker/logs/php-fpm/:/tmp/xdebug_log
         depends_on: 
             - mysql
+            - sso
         networks:
             - opencart-network
 
@@ -47,6 +68,7 @@ services:
             - opencart-network
         depends_on: 
             - php
+            - sso
 
 networks:
     opencart-network:

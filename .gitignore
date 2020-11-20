@@ -1,5 +1,3 @@
 docker/mysql
-system/storage/cache
 system/storage/logs
-
 docker/logs
