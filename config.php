@@ -28,13 +28,13 @@ define('DIR_SESSION', DIR_STORAGE . 'session/');
 define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 
 // DB
-$host = explode('.', str_replace('www.','',$_SERVER['HTTP_HOST']));
-if (sizeof($host) > 2) $db = $host[0];
+$host = explode('.', str_replace(['www.','.com','.br'],'',$_SERVER['HTTP_HOST']));
+if (sizeof($host) > 1) $db = $host[0];
 else $db = 'opencart';
 
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', 'mysql-container');
-define('DB_USERNAME', 'samuel');
+define('DB_HOSTNAME', 'mysql-opencart');
+define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '1234');
 define('DB_DATABASE', $db);
 define('DB_PORT', '3306');
