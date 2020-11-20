@@ -1,21 +1,21 @@
 <?php
 class ModelUserUserGroup extends Model {
 	public function addUserGroup($data) {
-		$this->db->query("INSERT INTO " . DB_PREFIX . "user_group SET name = '" . $this->db->escape($data['name']) . "', permission = '" . (isset($data['permission']) ? $this->db->escape(json_encode($data['permission'])) : '') . "'");
+		$this->ssodb->query("INSERT INTO " . DB_PREFIX . "user_group SET name = '" . $this->ssodb->escape($data['name']) . "', permission = '" . (isset($data['permission']) ? $this->ssodb->escape(json_encode($data['permission'])) : '') . "'");
 	
-		return $this->db->getLastId();
+		return $this->ssodb->getLastId();
 	}
 
 	public function editUserGroup($user_group_id, $data) {
-		$this->db->query("UPDATE " . DB_PREFIX . "user_group SET name = '" . $this->db->escape($data['name']) . "', permission = '" . (isset($data['permission']) ? $this->db->escape(json_encode($data['permission'])) : '') . "' WHERE user_group_id = '" . (int)$user_group_id . "'");
+		$this->ssodb->query("UPDATE " . DB_PREFIX . "user_group SET name = '" . $this->ssodb->escape($data['name']) . "', permission = '" . (isset($data['permission']) ? $this->ssodb->escape(json_encode($data['permission'])) : '') . "' WHERE user_group_id = '" . (int)$user_group_id . "'");
 	}
 
 	public function deleteUserGroup($user_group_id) {
-		$this->db->query("DELETE FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_group_id . "'");
+		$this->ssodb->query("DELETE FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_group_id . "'");
 	}
 
 	public function getUserGroup($user_group_id) {
-		$query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_group_id . "'");
+		$query = $this->ssodb->query("SELECT DISTINCT * FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_group_id . "'");
 
 		$user_group = array(
 			'name'       => $query->row['name'],
@@ -48,38 +48,38 @@ class ModelUserUserGroup extends Model {
 			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
 		}
 
-		$query = $this->db->query($sql);
+		$query = $this->ssodb->query($sql);
 
 		return $query->rows;
 	}
 
 	public function getTotalUserGroups() {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "user_group");
+		$query = $this->ssodb->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "user_group");
 
 		return $query->row['total'];
 	}
 
 	public function addPermission($user_group_id, $type, $route) {
-		$user_group_query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_group_id . "'");
+		$user_group_query = $this->ssodb->query("SELECT DISTINCT * FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_group_id . "'");
 
 		if ($user_group_query->num_rows) {
 			$data = json_decode($user_group_query->row['permission'], true);
 
 			$data[$type][] = $route;
 
-			$this->db->query("UPDATE " . DB_PREFIX . "user_group SET permission = '" . $this->db->escape(json_encode($data)) . "' WHERE user_group_id = '" . (int)$user_group_id . "'");
+			$this->ssodb->query("UPDATE " . DB_PREFIX . "user_group SET permission = '" . $this->ssodb->escape(json_encode($data)) . "' WHERE user_group_id = '" . (int)$user_group_id . "'");
 		}
 	}
 
 	public function removePermission($user_group_id, $type, $route) {
-		$user_group_query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_group_id . "'");
+		$user_group_query = $this->ssodb->query("SELECT DISTINCT * FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_group_id . "'");
 
 		if ($user_group_query->num_rows) {
 			$data = json_decode($user_group_query->row['permission'], true);
 
 			$data[$type] = array_diff($data[$type], array($route));
 
-			$this->db->query("UPDATE " . DB_PREFIX . "user_group SET permission = '" . $this->db->escape(json_encode($data)) . "' WHERE user_group_id = '" . (int)$user_group_id . "'");
+			$this->ssodb->query("UPDATE " . DB_PREFIX . "user_group SET permission = '" . $this->ssodb->escape(json_encode($data)) . "' WHERE user_group_id = '" . (int)$user_group_id . "'");
 		}
 	}
 }

@@ -1,3 +1,4 @@
 docker/mysql
+docker/sso
 system/storage/logs
 docker/logs

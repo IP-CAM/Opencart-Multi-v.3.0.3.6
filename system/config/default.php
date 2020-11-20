@@ -22,6 +22,15 @@ $_['db_database']          = '';
 $_['db_port']              = 3306;
 $_['db_autostart']         = false;
 
+// SSO
+$_['ssodb_engine']            = 'mysqli'; // mpdo, mssql, mysql, mysqli or postgre
+$_['ssodb_hostname']          = 'localhost';
+$_['ssodb_username']          = 'root';
+$_['ssodb_password']          = '';
+$_['ssodb_database']          = '';
+$_['ssodb_port']              = 3308;
+$_['ssodb_autostart']         = false;
+
 // Mail
 $_['mail_engine']          = 'mail'; // mail or smtp
 $_['mail_from']            = ''; // Your E-Mail

@@ -80,6 +80,10 @@ if ($config->get('db_autostart')) {
 	$registry->set('db', new DB($config->get('db_engine'), $config->get('db_hostname'), $config->get('db_username'), $config->get('db_password'), $config->get('db_database'), $config->get('db_port')));
 }
 
+if ($config->get('ssodb_autostart')) {
+	$registry->set('ssodb', new DB($config->get('ssodb_engine'), $config->get('ssodb_hostname'), $config->get('ssodb_username'), $config->get('ssodb_password'), $config->get('ssodb_database'), $config->get('ssodb_port')));
+}
+
 // Session
 $session = new Session($config->get('session_engine'), $registry);
 $registry->set('session', $session);

@@ -40,8 +40,8 @@ define('DIR_SESSION', DIR_STORAGE . 'session/');
 define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 
 // DB
-$host = explode('.', str_replace('www.','',$_SERVER['HTTP_HOST']));
-if (sizeof($host) > 2) $db = $host[0];
+$host = explode('.', str_replace(['www.','.com','.br'],'',$_SERVER['HTTP_HOST']));
+if (sizeof($host) > 1) $db = $host[0];
 else $db = 'opencart';
 
 define('DB_DRIVER', 'mysqli');
@@ -51,6 +51,14 @@ define('DB_PASSWORD', '1234');
 define('DB_DATABASE', $db);
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
+
+define('SSODB_DRIVER', 'mysqli');
+define('SSODB_HOSTNAME', 'mysql-sso');
+define('SSODB_USERNAME', 'sso');
+define('SSODB_PASSWORD', 'sso');
+define('SSODB_DATABASE', 'sso');
+define('SSODB_PORT', '3308');
+define('SSODB_PREFIX', 'oc_');
 
 // OpenCart API
 define('OPENCART_SERVER', 'https://www.opencart.com/');
