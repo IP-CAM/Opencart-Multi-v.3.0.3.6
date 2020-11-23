@@ -15,6 +15,15 @@ $_['db_password']        = DB_PASSWORD;
 $_['db_database']        = DB_DATABASE;
 $_['db_port']            = DB_PORT;
 
+// SSO
+$_['ssodb_autostart']      = true;
+$_['ssodb_engine']         = SSODB_DRIVER; // mpdo, mssql, mysql, mysqli or postgre
+$_['ssodb_hostname']       = SSODB_HOSTNAME;
+$_['ssodb_username']       = SSODB_USERNAME;
+$_['ssodb_password']       = SSODB_PASSWORD;
+$_['ssodb_database']       = SSODB_DATABASE;
+$_['ssodb_port']           = SSODB_PORT;
+
 // Session
 $_['session_autostart']  = false;
 $_['session_engine']     = 'db';
