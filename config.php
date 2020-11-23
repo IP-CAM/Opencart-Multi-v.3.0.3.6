@@ -39,3 +39,11 @@ define('DB_PASSWORD', '1234');
 define('DB_DATABASE', $db);
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
+
+define('SSODB_DRIVER', 'mysqli');
+define('SSODB_HOSTNAME', 'mysql-sso');
+define('SSODB_USERNAME', 'root');
+define('SSODB_PASSWORD', '1234');
+define('SSODB_DATABASE', 'sso');
+define('SSODB_PORT', '3308');
+define('SSODB_PREFIX', 'oc_');
