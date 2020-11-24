@@ -3,7 +3,7 @@
 ```bash
 docker exec -i mysql-opencart mysql -uroot -p1234 < db/opencartclean.sql
 docker exec -i mysql-sso mysql -uroot -p1234 < db/user.sql
-docker exec -i mysql-sso mysql -uroot -p1234 < db/userExtra.sql
+docker exec -i mysql-sso mysql -uroot -p1234 < db/customerExtras.sql
 docker exec -i mysql-sso mysql -uroot -p1234 < db/address.sql
 docker exec -i mysql-sso mysql -uroot -p1234 < db/addressExtra.sql
 ```
