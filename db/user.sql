@@ -43,6 +43,8 @@ ADD COLUMN `store` VARCHAR(45) NULL AFTER `date_added`;
 
 UPDATE `sso`.`oc_user` SET `store` = 'sws' WHERE (`user_id` = '1');
 
+INSERT INTO `oc_user` VALUES (2,1,'sso','3cdda6204299e80712cedcb80423c08036f044e9','EFrk3mfAv','John','Doe','sws.samuel@gmail.com','','','',1,'2020-11-17 11:41:08','opencart');
+
 --
 -- Table structure for table `oc_user_group`
 --
