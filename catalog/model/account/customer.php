@@ -11,65 +11,61 @@ class ModelAccountCustomer extends Model {
 
 		$customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);
 
-		$this->ssodb->query("INSERT INTO " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$customer_group_id . "', store_id = '" . (int)$this->config->get('config_store_id') . "', language_id = '" . (int)$this->config->get('config_language_id') . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['account']) ? json_encode($data['custom_field']['account']) : '') . "', salt = '" . $this->db->escape($salt = token(9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', newsletter = '" . (isset($data['newsletter']) ? (int)$data['newsletter'] : 0) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', status = '" . (int)!$customer_group_info['approval'] . "', date_added = NOW()");
+		$this->ssodb->query("INSERT INTO " . SSODB_PREFIX . "user SET firstname = '" . $this->ssodb->escape($data['firstname']) . "', lastname = '" . $this->ssodb->escape($data['lastname']) . "', email = '" . $this->ssodb->escape($data['email']) . "', telephone = '" . $this->ssodb->escape($data['telephone']) . "', salt = '" . $this->ssodb->escape($salt = token(9)) . "', password = '" . $this->ssodb->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', status = '" . (int)!$customer_group_info['approval'] . "', date_added = NOW()");
 
-		$customer_id = $this->db->getLastId();
+		$user_id = $this->ssodb->getLastId();
 
 		if ($customer_group_info['approval']) {
-			$this->db->query("INSERT INTO `" . DB_PREFIX . "customer_approval` SET customer_id = '" . (int)$customer_id . "', type = 'customer', date_added = NOW()");
+			$this->db->query("INSERT INTO `" . DB_PREFIX . "customer_approval` SET customer_id = '" . (int)$user_id . "', type = 'customer', date_added = NOW()");
 		}
 		
-		return $customer_id;
+		return $user_id;
 	}
 
-	public function editCustomer($customer_id, $data) {
-		$this->ssodb->query("UPDATE " . DB_PREFIX . "customer SET firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['account']) ? json_encode($data['custom_field']['account']) : '') . "' WHERE customer_id = '" . (int)$customer_id . "'");
+	public function editCustomer($user_id, $data) {
+		$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET firstname = '" . $this->ssodb->escape($data['firstname']) . "', lastname = '" . $this->ssodb->escape($data['lastname']) . "', email = '" . $this->ssodb->escape($data['email']) . "', telephone = '" . $this->ssodb->escape($data['telephone']) . "' WHERE user_id = '" . (int)$user_id . "'");
 	}
 
 	public function editPassword($email, $password) {
-		$this->ssodb->query("UPDATE " . DB_PREFIX . "customer SET salt = '" . $this->db->escape($salt = token(9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($password)))) . "', code = '' WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+		$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET salt = '" . $this->ssodb->escape($salt = token(9)) . "', password = '" . $this->ssodb->escape(sha1($salt . sha1($salt . sha1($password)))) . "', code = '' WHERE LOWER(email) = '" . $this->ssodb->escape(utf8_strtolower($email)) . "'");
 	}
 
-	public function editAddressId($customer_id, $address_id) {
-		$this->ssodb->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+	public function editAddressId($user_id, $address_id) {
+		$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET ship_address_id = '" . (int)$address_id . "' WHERE user_id = '" . (int)$user_id . "'");
 	}
 	
 	public function editCode($email, $code) {
-		$this->ssodb->query("UPDATE `" . DB_PREFIX . "customer` SET code = '" . $this->db->escape($code) . "' WHERE LCASE(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+		$this->ssodb->query("UPDATE `" . SSODB_PREFIX . "user` SET code = '" . $this->ssodb->escape($code) . "' WHERE LCASE(email) = '" . $this->ssodb->escape(utf8_strtolower($email)) . "'");
 	}
 
-	public function editNewsletter($newsletter) {
-		$this->ssodb->query("UPDATE " . DB_PREFIX . "customer SET newsletter = '" . (int)$newsletter . "' WHERE customer_id = '" . (int)$this->customer->getId() . "'");
-	}
-
-	public function getCustomer($customer_id) {
-		$query = $this->ssodb->query("SELECT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
+	public function getCustomer($user_id) {
+		$query = $this->ssodb->query("SELECT * FROM " . SSODB_PREFIX . "user WHERE user_id = '" . (int)$user_id . "'");
 
 		return $query->row;
 	}
 
 	public function getCustomerByEmail($email) {
-		$query = $this->ssodb->query("SELECT * FROM " . DB_PREFIX . "customer WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+		$query = $this->ssodb->query("SELECT * FROM " . SSODB_PREFIX . "user WHERE LOWER(email) = '" . $this->ssodb->escape(utf8_strtolower($email)) . "'");
 
 		return $query->row;
 	}
 
 	public function getCustomerByCode($code) {
-		$query = $this->ssodb->query("SELECT customer_id, firstname, lastname, email FROM `" . DB_PREFIX . "customer` WHERE code = '" . $this->db->escape($code) . "' AND code != ''");
+		$query = $this->ssodb->query("SELECT user_id, firstname, lastname, email FROM `" . SSODB_PREFIX . "user` WHERE code = '" . $this->ssodb->escape($code) . "' AND code != ''");
 
 		return $query->row;
 	}
 
-	public function getCustomerByToken($token) {
-		$query = $this->ssodb->query("SELECT * FROM " . DB_PREFIX . "customer WHERE token = '" . $this->db->escape($token) . "' AND token != ''");
+	// public function getCustomerByToken($token) {
+	// 	$query = $this->ssodb->query("SELECT * FROM " . DB_PREFIX . "customer WHERE token = '" . $this->db->escape($token) . "' AND token != ''");
 
-		$this->ssodb->query("UPDATE " . DB_PREFIX . "customer SET token = ''");
+	// 	$this->ssodb->query("UPDATE " . DB_PREFIX . "customer SET token = ''");
 
-		return $query->row;
-	}
+	// 	return $query->row;
+	// }
 	
 	public function getTotalCustomersByEmail($email) {
-		$query = $this->ssodb->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+		$query = $this->ssodb->query("SELECT COUNT(*) AS total FROM " . SSODB_PREFIX . "user WHERE LOWER(email) = '" . $this->ssodb->escape(utf8_strtolower($email)) . "'");
 
 		return $query->row['total'];
 	}
@@ -100,30 +96,30 @@ class ModelAccountCustomer extends Model {
 		return $query->row['total'];
 	}
 
-	public function getIps($customer_id) {
-		$query = $this->ssodb->query("SELECT * FROM `" . DB_PREFIX . "customer_ip` WHERE customer_id = '" . (int)$customer_id . "'");
+	public function getIps($user_id) {
+		$query = $this->ssodb->query("SELECT * FROM `" . SSODB_PREFIX . "user_ip` WHERE user_id = '" . (int)$user_id . "'");
 
 		return $query->rows;
 	}
 
 	public function addLoginAttempt($email) {
-		$query = $this->ssodb->query("SELECT * FROM " . DB_PREFIX . "customer_login WHERE email = '" . $this->db->escape(utf8_strtolower((string)$email)) . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
+		$query = $this->ssodb->query("SELECT * FROM " . SSODB_PREFIX . "user_login WHERE email = '" . $this->ssodb->escape(utf8_strtolower((string)$email)) . "' AND ip = '" . $this->ssodb->escape($this->request->server['REMOTE_ADDR']) . "'");
 
 		if (!$query->num_rows) {
-			$this->ssodb->query("INSERT INTO " . DB_PREFIX . "customer_login SET email = '" . $this->db->escape(utf8_strtolower((string)$email)) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', total = 1, date_added = '" . $this->db->escape(date('Y-m-d H:i:s')) . "', date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "'");
+			$this->ssodb->query("INSERT INTO " . SSODB_PREFIX . "user_login SET email = '" . $this->ssodb->escape(utf8_strtolower((string)$email)) . "', ip = '" . $this->ssodb->escape($this->request->server['REMOTE_ADDR']) . "', total = 1, date_added = '" . $this->ssodb->escape(date('Y-m-d H:i:s')) . "', date_modified = '" . $this->ssodb->escape(date('Y-m-d H:i:s')) . "'");
 		} else {
-			$this->ssodb->query("UPDATE " . DB_PREFIX . "customer_login SET total = (total + 1), date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "' WHERE customer_login_id = '" . (int)$query->row['customer_login_id'] . "'");
+			$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user_login SET total = (total + 1), date_modified = '" . $this->ssodb->escape(date('Y-m-d H:i:s')) . "' WHERE user_login_id = '" . (int)$query->row['user_login_id'] . "'");
 		}
 	}
 
 	public function getLoginAttempts($email) {
-		$query = $this->ssodb->query("SELECT * FROM `" . DB_PREFIX . "customer_login` WHERE email = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+		$query = $this->ssodb->query("SELECT * FROM `" . SSODB_PREFIX . "user_login` WHERE email = '" . $this->ssodb->escape(utf8_strtolower($email)) . "'");
 
 		return $query->row;
 	}
 
 	public function deleteLoginAttempts($email) {
-		$this->ssodb->query("DELETE FROM `" . DB_PREFIX . "customer_login` WHERE email = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+		$this->ssodb->query("DELETE FROM `" . SSODB_PREFIX . "user_login` WHERE email = '" . $this->ssodb->escape(utf8_strtolower($email)) . "'");
 	}
 	
 	public function addAffiliate($customer_id, $data) {
