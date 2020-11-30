@@ -19,9 +19,9 @@
 -- Table structure for table `oc_address`
 --
 
-CREATE DATABASE IF NOT EXISTS `opencart`;
+CREATE DATABASE IF NOT EXISTS `sws`;
 
-USE `opencart`;
+USE `sws`;
 
 DROP TABLE IF EXISTS `oc_address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

@@ -1,3 +1,258 @@
 2020-11-17 11:52:42 - PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'www' in /html/virtual.com/opencart/system/library/db/mysqli.php on line 7
 2020-11-17 11:52:42 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/virtual.com/opencart/system/library/db/mysqli.php on line 10
 2020-11-17 11:52:42 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/virtual.com/opencart/system/library/db/mysqli.php on line 10
+2020-11-20 19:09:37 - PHP Notice:  Undefined variable: config in xdebug://debug-eval on line 1
+2020-11-20 19:20:31 - PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'192.168.0.4' (using password: YES) in /html/system/library/db/mysqli.php on line 7
+2020-11-20 19:20:31 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 19:20:31 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 19:20:59 - PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /html/system/library/db/mysqli.php on line 7
+2020-11-20 19:20:59 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 19:20:59 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 19:40:41 - PHP Notice:  Undefined property: Cart\User::$ssodb in /html/system/library/cart/user.php on line 40
+2020-11-20 19:41:28 - PHP Notice:  Undefined property: Cart\User::$ssodb in /html/system/library/cart/user.php on line 40
+2020-11-20 19:41:29 - PHP Notice:  Undefined property: Cart\User::$sso in xdebug://debug-eval on line 1
+2020-11-20 19:43:09 - PHP Notice:  Undefined property: Cart\User::$sso in xdebug://debug-eval on line 1
+2020-11-20 19:43:12 - PHP Notice:  Undefined property: Cart\User::$sso in xdebug://debug-eval on line 1
+2020-11-20 19:43:26 - PHP Notice:  Undefined property: Cart\User::$sso in xdebug://debug-eval on line 1
+2020-11-20 19:44:01 - PHP Notice:  Undefined property: Cart\User::$ssodb in /html/system/library/cart/user.php on line 40
+2020-11-20 21:10:41 - PHP Warning:  Packets out of order. Expected 0 received 1. Packet size=70 in /html/system/library/db/mysqli.php on line 7
+2020-11-20 21:10:42 - PHP Warning:  mysqli::__construct(): Error while reading greeting packet. PID=8 in /html/system/library/db/mysqli.php on line 7
+2020-11-20 21:10:42 - PHP Warning:  mysqli::__construct(): (HY000/2006): MySQL server has gone away in /html/system/library/db/mysqli.php on line 7
+2020-11-20 21:10:42 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 21:10:42 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 21:18:24 - PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'sso' in /html/system/library/db/mysqli.php on line 7
+2020-11-20 21:18:24 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 21:18:24 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 21:20:49 - PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /html/system/library/db/mysqli.php on line 7
+2020-11-20 21:20:49 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 21:20:49 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 21:20:51 - PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /html/system/library/db/mysqli.php on line 7
+2020-11-20 21:20:51 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-20 21:20:51 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-23 11:39:38 - PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'sso'@'%' to database 'sso' in /html/system/library/db/mysqli.php on line 7
+2020-11-23 11:39:38 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-23 11:39:38 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-23 11:52:14 - PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'sso'@'%' to database 'sso' in /html/system/library/db/mysqli.php on line 7
+2020-11-23 11:52:15 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-23 11:52:15 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-23 11:53:58 - PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'sso' in /html/system/library/db/mysqli.php on line 7
+2020-11-23 11:53:58 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-23 11:53:58 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-23 17:23:42 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:23:42 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:23:55 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:23:55 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:24:04 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:24:04 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:24:07 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:24:07 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:24:38 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:24:38 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:24:52 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:24:52 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:25:07 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:25:07 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:25:24 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:25:24 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:27:27 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:27:27 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:28:24 - PHP Notice:  Undefined property: ControllerStartupStartup::$tax in xdebug://debug-eval on line 1
+2020-11-23 17:28:25 - PHP Notice:  Undefined property: Registry::$tax in xdebug://debug-eval on line 1
+2020-11-23 17:28:26 - PHP Notice:  Undefined property: Registry::$tax in xdebug://debug-eval on line 1
+2020-11-23 17:28:54 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:28:54 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:29:10 - PHP Notice:  Undefined property: ControllerStartupStartup::$tax in xdebug://debug-eval on line 1
+2020-11-23 17:29:11 - PHP Notice:  Undefined property: Registry::$tax in xdebug://debug-eval on line 1
+2020-11-23 17:29:14 - PHP Notice:  Undefined property: Registry::$tax in xdebug://debug-eval on line 1
+2020-11-23 17:29:37 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:29:37 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:30:15 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:30:16 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:31:07 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:31:09 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:32:37 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:32:38 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 17:33:07 - PHP Notice:  Undefined property: Cart\Tax::$setShippingAddress in xdebug://debug-eval on line 1
+2020-11-23 17:33:13 - PHP Notice:  Undefined property: Cart\Tax::$setShippingAddress in xdebug://debug-eval on line 1
+2020-11-23 17:33:21 - PHP Notice:  Trying to access array offset on value of type bool in xdebug://debug-eval on line 1
+2020-11-23 17:33:21 - PHP Notice:  Trying to access array offset on value of type bool in xdebug://debug-eval on line 1
+2020-11-23 17:33:28 - PHP Notice:  Trying to access array offset on value of type bool in xdebug://debug-eval on line 1
+2020-11-23 17:33:34 - PHP Notice:  Trying to access array offset on value of type bool in xdebug://debug-eval on line 1
+2020-11-23 17:33:34 - PHP Notice:  Trying to access array offset on value of type bool in xdebug://debug-eval on line 1
+2020-11-23 17:33:38 - PHP Notice:  Trying to access array offset on value of type bool in xdebug://debug-eval on line 1
+2020-11-23 18:51:46 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:51:46 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:51:54 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:51:54 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:51:54 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /html/system/framework.php:42) in /html/system/library/response.php on line 36
+2020-11-23 18:53:14 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:53:14 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:57:07 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:57:07 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:57:12 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:57:12 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:58:44 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 18:58:47 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:00:35 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:00:36 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:00:40 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:00:40 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:00:44 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:00:44 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:02:26 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:02:31 - PHP Notice:  Undefined variable: result in /html/system/engine/router.php on line 69
+2020-11-23 19:02:33 - PHP Notice:  Undefined variable: result in /html/system/engine/router.php on line 73
+2020-11-23 19:02:41 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:08:01 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:19:46 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:19:46 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:20:11 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:20:11 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:20:11 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /html/system/framework.php:42) in /html/system/library/response.php on line 36
+2020-11-23 19:20:41 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:20:41 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:21:10 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:21:10 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:22:11 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:13 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:37 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:39 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:40 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:41 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:42 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:43 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:44 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:44 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:45 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:45 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:46 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:22:54 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:00 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:01 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:01 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:02 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:02 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:03 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:03 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:03 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:04 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:04 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:05 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:06 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:10 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:11 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:14 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:15 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:17 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:18 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:38 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:23:41 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:24:00 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:24:06 - PHP Notice:  Undefined property: ControllerAccountLogin::$session in xdebug://debug-eval on line 1
+2020-11-23 19:24:06 - PHP Notice:  Trying to get property 'data' of non-object in xdebug://debug-eval on line 1
+2020-11-23 19:24:06 - PHP Notice:  Trying to access array offset on value of type null in xdebug://debug-eval on line 1
+2020-11-23 19:28:59 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:28:59 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:28:59 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /html/system/framework.php:42) in /html/system/library/response.php on line 36
+2020-11-23 19:32:53 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:32:57 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:32:57 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:33:00 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:34:18 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:34:20 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:34:23 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:34:26 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:34:30 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /html/system/framework.php:42) in /html/system/library/response.php on line 36
+2020-11-23 19:34:39 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:34:39 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:34:39 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /html/system/framework.php:42) in /html/system/library/response.php on line 36
+2020-11-23 19:34:57 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:34:57 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:36:17 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:36:19 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:36:21 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:36:22 - PHP Notice:  Undefined index: shipping_address in xdebug://debug-eval on line 1
+2020-11-23 19:38:16 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:38:16 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:38:49 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:38:49 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:43:43 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:43:43 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:43:51 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:43:51 - PHP Notice:  Trying to access array offset on value of type bool in /html/catalog/controller/startup/startup.php on line 166
+2020-11-23 19:43:51 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /html/system/framework.php:42) in /html/system/library/response.php on line 36
+2020-11-23 20:11:01 - PHP Notice:  Undefined index: customer_group_id in /html/catalog/controller/checkout/confirm.php on line 123
+2020-11-23 20:11:01 - PHP Notice:  Undefined index: firstname in /html/catalog/controller/checkout/confirm.php on line 124
+2020-11-23 20:11:01 - PHP Notice:  Undefined index: lastname in /html/catalog/controller/checkout/confirm.php on line 125
+2020-11-23 20:11:01 - PHP Notice:  Undefined index: email in /html/catalog/controller/checkout/confirm.php on line 126
+2020-11-23 20:11:01 - PHP Notice:  Undefined index: telephone in /html/catalog/controller/checkout/confirm.php on line 127
+2020-11-23 20:11:01 - PHP Notice:  Undefined index: custom_field in /html/catalog/controller/checkout/confirm.php on line 128
+2020-11-23 20:12:01 - PHP Notice:  Undefined index: customer_group_id in /html/catalog/controller/checkout/confirm.php on line 123
+2020-11-23 20:12:01 - PHP Notice:  Undefined index: firstname in /html/catalog/controller/checkout/confirm.php on line 124
+2020-11-23 20:12:01 - PHP Notice:  Undefined index: lastname in /html/catalog/controller/checkout/confirm.php on line 125
+2020-11-23 20:12:01 - PHP Notice:  Undefined index: email in /html/catalog/controller/checkout/confirm.php on line 126
+2020-11-23 20:12:01 - PHP Notice:  Undefined index: telephone in /html/catalog/controller/checkout/confirm.php on line 127
+2020-11-23 20:12:01 - PHP Notice:  Undefined index: custom_field in /html/catalog/controller/checkout/confirm.php on line 128
+2020-11-23 20:12:57 - PHP Notice:  Undefined index: customer_group_id in /html/catalog/controller/checkout/confirm.php on line 123
+2020-11-23 20:12:57 - PHP Notice:  Undefined index: firstname in /html/catalog/controller/checkout/confirm.php on line 124
+2020-11-23 20:12:57 - PHP Notice:  Undefined index: lastname in /html/catalog/controller/checkout/confirm.php on line 125
+2020-11-23 20:12:57 - PHP Notice:  Undefined index: email in /html/catalog/controller/checkout/confirm.php on line 126
+2020-11-23 20:12:57 - PHP Notice:  Undefined index: telephone in /html/catalog/controller/checkout/confirm.php on line 127
+2020-11-23 20:12:57 - PHP Notice:  Undefined index: custom_field in /html/catalog/controller/checkout/confirm.php on line 128
+2020-11-23 20:21:48 - PHP Notice:  Undefined index: customer_group_id in /html/catalog/controller/checkout/confirm.php on line 123
+2020-11-23 20:21:48 - PHP Notice:  Undefined index: firstname in /html/catalog/controller/checkout/confirm.php on line 124
+2020-11-23 20:21:48 - PHP Notice:  Undefined index: lastname in /html/catalog/controller/checkout/confirm.php on line 125
+2020-11-23 20:21:48 - PHP Notice:  Undefined index: email in /html/catalog/controller/checkout/confirm.php on line 126
+2020-11-23 20:21:48 - PHP Notice:  Undefined index: telephone in /html/catalog/controller/checkout/confirm.php on line 127
+2020-11-23 20:21:48 - PHP Notice:  Undefined index: custom_field in /html/catalog/controller/checkout/confirm.php on line 128
+2020-11-23 20:23:33 - PHP Notice:  Undefined index: customer_group_id in /html/catalog/controller/checkout/confirm.php on line 123
+2020-11-23 20:23:33 - PHP Notice:  Undefined index: firstname in /html/catalog/controller/checkout/confirm.php on line 124
+2020-11-23 20:23:33 - PHP Notice:  Undefined index: lastname in /html/catalog/controller/checkout/confirm.php on line 125
+2020-11-23 20:23:33 - PHP Notice:  Undefined index: email in /html/catalog/controller/checkout/confirm.php on line 126
+2020-11-23 20:23:33 - PHP Notice:  Undefined index: telephone in /html/catalog/controller/checkout/confirm.php on line 127
+2020-11-23 20:23:33 - PHP Notice:  Undefined index: custom_field in /html/catalog/controller/checkout/confirm.php on line 128
+2020-11-24 13:10:09 - PHP Notice:  Trying to access array offset on value of type null in /html/admin/controller/marketplace/marketplace.php on line 1011
+2020-11-24 13:10:09 - PHP Notice:  Trying to access array offset on value of type null in /html/admin/controller/marketplace/marketplace.php on line 1013
+2020-11-24 13:11:40 - PHP Notice:  Trying to access array offset on value of type null in /html/admin/controller/marketplace/marketplace.php on line 1011
+2020-11-24 13:11:40 - PHP Notice:  Trying to access array offset on value of type null in /html/admin/controller/marketplace/marketplace.php on line 1013
+2020-11-24 13:20:23 - PHP Notice:  Trying to access array offset on value of type null in /html/admin/controller/marketplace/marketplace.php on line 1011
+2020-11-24 13:20:23 - PHP Notice:  Trying to access array offset on value of type null in /html/admin/controller/marketplace/marketplace.php on line 1013
+2020-11-25 21:14:29 - PHP Notice:  Undefined index: email in /html/system/library/cart/user.php on line 19
+2020-11-25 21:14:29 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /html/admin/controller/startup/error.php:34) in /html/system/library/response.php on line 36
+2020-11-25 21:18:38 - PHP Notice:  Undefined index: user_group_id in /html/system/library/cart/user.php on line 20
+2020-11-25 21:18:38 - PHP Notice:  Undefined index: user_group_id in /html/system/library/cart/user.php on line 24
+2020-11-25 21:18:38 - PHP Notice:  Undefined index: permission in /html/system/library/cart/user.php on line 26
+2020-11-25 21:18:38 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /html/admin/controller/startup/error.php:34) in /html/system/library/response.php on line 36
+2020-11-25 21:25:24 - PHP Notice:  Undefined index: firstname in /html/admin/controller/common/header.php on line 42
+2020-11-25 21:25:24 - PHP Notice:  Undefined index: lastname in /html/admin/controller/common/header.php on line 43
+2020-11-25 21:25:24 - PHP Notice:  Undefined index: username in /html/admin/controller/common/header.php on line 44
+2020-11-25 21:25:24 - PHP Notice:  Undefined index: image in /html/admin/controller/common/header.php on line 47
+2020-11-26 11:55:56 - PHP Notice:  Undefined index: firstname in /html/admin/controller/common/header.php on line 42
+2020-11-26 11:55:56 - PHP Notice:  Undefined index: lastname in /html/admin/controller/common/header.php on line 43
+2020-11-26 11:55:56 - PHP Notice:  Undefined index: username in /html/admin/controller/common/header.php on line 44
+2020-11-26 11:55:56 - PHP Notice:  Undefined index: image in /html/admin/controller/common/header.php on line 47
+2020-11-26 14:21:20 - PHP Notice:  Undefined index: username in /html/admin/controller/common/header.php on line 44
+2020-11-26 14:41:06 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 14:41:06 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 14:41:57 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 14:41:57 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 14:42:48 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 336
+2020-11-26 14:52:35 - PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'sso' in /html/system/library/db/mysqli.php on line 7
+2020-11-26 14:52:35 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-26 14:52:35 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-26 14:56:53 - PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'sso'@'172.23.0.4' (using password: YES) in /html/system/library/db/mysqli.php on line 7
+2020-11-26 14:56:53 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-26 14:56:53 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-26 14:57:21 - PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'sso'@'172.23.0.4' (using password: YES) in /html/system/library/db/mysqli.php on line 7
+2020-11-26 14:57:21 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-26 14:57:21 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /html/system/library/db/mysqli.php on line 10
+2020-11-26 15:24:14 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 15:24:14 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 15:24:42 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 15:24:42 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 15:25:18 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 15:25:18 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 15:29:09 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 15:29:09 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 15:33:10 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177
+2020-11-26 15:33:10 - PHP Notice:  Undefined index: username in /html/admin/controller/user/user.php on line 177

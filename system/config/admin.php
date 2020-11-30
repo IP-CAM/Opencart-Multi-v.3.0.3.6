@@ -12,7 +12,7 @@ $_['db_password']       = DB_PASSWORD;
 $_['db_database']       = DB_DATABASE;
 $_['db_port']           = DB_PORT;
 
-// Database
+// SSO
 $_['ssodb_autostart']      = true;
 $_['ssodb_engine']         = SSODB_DRIVER; // mpdo, mssql, mysql, mysqli or postgre
 $_['ssodb_hostname']       = SSODB_HOSTNAME;
