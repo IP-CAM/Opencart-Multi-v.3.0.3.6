@@ -19,7 +19,7 @@ class ControllerCommonHeader extends Controller {
 
 		$this->load->language('common/header');
 		
-		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->user->getUserName());
+		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->user->getemail());
 
 		if (!isset($this->request->get['user_token']) || !isset($this->session->data['user_token']) || ($this->request->get['user_token'] != $this->session->data['user_token'])) {
 			$data['logged'] = '';
@@ -41,7 +41,7 @@ class ControllerCommonHeader extends Controller {
 			if ($user_info) {
 				$data['firstname'] = $user_info['firstname'];
 				$data['lastname'] = $user_info['lastname'];
-				$data['username']  = $user_info['username'];
+				// $data['username']  = $user_info['username'];
 				$data['user_group'] = $user_info['user_group'];
 	
 				if (is_file(DIR_IMAGE . $user_info['image'])) {
