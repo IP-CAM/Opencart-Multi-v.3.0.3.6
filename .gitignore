@@ -6,3 +6,4 @@ image/cache
 system/storage/cache
 .DS_Store
 copy
+system/storage/logs/error.log
