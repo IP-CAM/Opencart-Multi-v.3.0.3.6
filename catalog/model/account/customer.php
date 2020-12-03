@@ -7,6 +7,12 @@ class ModelAccountCustomer extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}
 
+		$query = $this->ssodb->query("SELECT * FROM ". SSODB_PREFIX . "user_store WHERE user_id = ". (int)$data['customer_id']. " AND store = '" . DB_DATABASE . "'");
+
+		if(!$query->num_rows) {
+			$this->ssodb->query("INSERT INTO ". SSODB_PREFIX . "user_store SET user_id = ". (int)$data['customer_id']. " , store = '" . SSODB_DATABASE . "' , user_group_id = NULL, status = true");
+		}
+
 		$this->load->model('account/customer_group');
 
 		$customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);

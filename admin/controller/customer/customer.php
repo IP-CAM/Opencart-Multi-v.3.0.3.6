@@ -689,15 +689,15 @@ class ControllerCustomerCustomer extends Controller {
 
 		$this->load->model('customer/customer_group');
 
-		$data['customer_groups'] = $this->model_customer_customer_group->getCustomerGroups();
+		// $data['customer_groups'] = $this->model_customer_customer_group->getCustomerGroups();
 
-		if (isset($this->request->post['customer_group_id'])) {
-			$data['customer_group_id'] = $this->request->post['customer_group_id'];
-		} elseif (!empty($customer_info)) {
-			$data['customer_group_id'] = $customer_info['customer_group_id'];
-		} else {
-			$data['customer_group_id'] = $this->config->get('config_customer_group_id');
-		}
+		// if (isset($this->request->post['customer_group_id'])) {
+		// 	$data['customer_group_id'] = $this->request->post['customer_group_id'];
+		// } elseif (!empty($customer_info)) {
+		// 	$data['customer_group_id'] = $customer_info['customer_group_id'];
+		// } else {
+		// 	$data['customer_group_id'] = $this->config->get('config_customer_group_id');
+		// }
 
 		if (isset($this->request->post['firstname'])) {
 			$data['firstname'] = $this->request->post['firstname'];
@@ -755,21 +755,21 @@ class ControllerCustomerCustomer extends Controller {
 			);
 		}
 
-		if (isset($this->request->post['custom_field'])) {
-			$data['account_custom_field'] = $this->request->post['custom_field'];
-		} elseif (!empty($customer_info)) {
-			$data['account_custom_field'] = json_decode($customer_info['custom_field'], true);
-		} else {
-			$data['account_custom_field'] = array();
-		}
+		// if (isset($this->request->post['custom_field'])) {
+		// 	$data['account_custom_field'] = $this->request->post['custom_field'];
+		// } elseif (!empty($customer_info)) {
+		// 	$data['account_custom_field'] = json_decode($customer_info['custom_field'], true);
+		// } else {
+		// 	$data['account_custom_field'] = array();
+		// }
 
-		if (isset($this->request->post['newsletter'])) {
-			$data['newsletter'] = $this->request->post['newsletter'];
-		} elseif (!empty($customer_info)) {
-			$data['newsletter'] = $customer_info['newsletter'];
-		} else {
-			$data['newsletter'] = '';
-		}
+		// if (isset($this->request->post['newsletter'])) {
+		// 	$data['newsletter'] = $this->request->post['newsletter'];
+		// } elseif (!empty($customer_info)) {
+		// 	$data['newsletter'] = $customer_info['newsletter'];
+		// } else {
+		// 	$data['newsletter'] = '';
+		// }
 
 		if (isset($this->request->post['status'])) {
 			$data['status'] = $this->request->post['status'];
@@ -811,12 +811,12 @@ class ControllerCustomerCustomer extends Controller {
 			$data['addresses'] = array();
 		}
 
-		if (isset($this->request->post['address_id'])) {
-			$data['address_id'] = $this->request->post['address_id'];
+		if (isset($this->request->post['ship_address_id'])) {
+			$data['ship_address_id'] = $this->request->post['ship_address_id'];
 		} elseif (!empty($customer_info)) {
-			$data['address_id'] = $customer_info['address_id'];
+			$data['ship_address_id'] = $customer_info['ship_address_id'];
 		} else {
-			$data['address_id'] = '';
+			$data['ship_address_id'] = '';
 		}
 
 		// Affliate
