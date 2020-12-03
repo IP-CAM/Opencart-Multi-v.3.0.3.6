@@ -58,7 +58,7 @@ define('SSODB_USERNAME', 'root');
 define('SSODB_PASSWORD', '1234');
 define('SSODB_DATABASE', 'sso');
 define('SSODB_PORT', '3308');
-define('SSODB_PREFIX', 'oc_');
+define('SSODB_PREFIX', '');
 
 // OpenCart API
 define('OPENCART_SERVER', 'https://www.opencart.com/');
