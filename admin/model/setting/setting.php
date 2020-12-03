@@ -13,6 +13,14 @@ class ModelSettingSetting extends Model {
 			}
 		}
 
+		if ($code == 'config'){
+			$ssoquery = $this->ssodb->query("SELECT * FROM store WHERE store = '". DB_DATABASE ."'");
+			$storeInfo = sso\store::storeToConfig($ssoquery->row);
+			foreach ($storeInfo as $key => $info) {
+				$setting_data[$key] =  $info;
+			}
+		}
+
 		return $setting_data;
 	}
 
@@ -27,6 +35,16 @@ class ModelSettingSetting extends Model {
 					$this->db->query("INSERT INTO " . DB_PREFIX . "setting SET store_id = '" . (int)$store_id . "', `code` = '" . $this->db->escape($code) . "', `key` = '" . $this->db->escape($key) . "', `value` = '" . $this->db->escape(json_encode($value, true)) . "', serialized = '1'");
 				}
 			}
+		}
+
+		if ($code == 'config'){
+			$storeInfo = sso\store::configToStore($data);
+			foreach ($storeInfo as $key => $info) {
+				$querySetArray[] = " `".$key."` = '".$this->db->escape($info)."' ";
+			}
+			$querySet = implode(',', $querySetArray);
+
+			$this->ssodb->query("UPDATE store SET ".$querySet." WHERE store = '". DB_DATABASE ."'");
 		}
 	}
 

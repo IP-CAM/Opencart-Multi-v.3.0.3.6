@@ -12,6 +12,12 @@ class ControllerStartupStartup extends Controller {
 			}
 		}
 
+		$ssoquery = $this->ssodb->query("SELECT * FROM store WHERE store = '". DB_DATABASE ."'");
+		$storeInfo = sso\store::storeToConfig($ssoquery->row);
+		foreach ($storeInfo as $key => $info) {
+			$this->config->set($key, $info);
+		}
+
 		// Theme
 		$this->config->set('template_cache', $this->config->get('developer_theme'));
 				

@@ -2,5 +2,8 @@ docker/mysql
 docker/sso
 system/storage/logs
 docker/logs
-system/storage/
 image/cache
+system/storage/cache
+.DS_Store
+copy
+system/storage/logs/error.log
