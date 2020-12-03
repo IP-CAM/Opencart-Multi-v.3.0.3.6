@@ -28,7 +28,7 @@ class ModelCustomerCustomer extends Model {
 		$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET firstname = '" . $this->ssodb->escape($data['firstname']) . "', lastname = '" . $this->ssodb->escape($data['lastname']) . "', email = '" . $this->ssodb->escape($data['email']) . "', telephone = '" . $this->ssodb->escape($data['telephone']) . "', status = '" . (int)$data['status'] . "', safe = '" . (int)$data['safe'] . "' WHERE user_id = '" . (int)$customer_id . "'");
 
 		if ($data['password']) {
-			$this->ssodb->query("UPDATE " . SSODB_PREFIX . "customer SET salt = '" . $this->db->escape($salt = token(9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "' WHERE customer_id = '" . (int)$customer_id . "'");
+			$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET salt = '" . $this->ssodb->escape($salt = token(9)) . "', password = '" . $this->ssodb->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "' WHERE user_id = '" . (int)$customer_id . "'");
 		}
 
 		$this->ssodb->query("DELETE FROM " . SSODB_PREFIX . "address WHERE user_id = '" . (int)$customer_id . "'");

@@ -124,7 +124,7 @@ class ControllerStartupStartup extends Controller {
 			$this->config->set('config_customer_group_id', $this->session->data['customer']['customer_group_id']);
 		} elseif ($this->customer->isLogged()) {
 			// Logged in customers
-			$this->config->set('config_customer_group_id', $this->customer->getGroupId());
+			// $this->config->set('config_customer_group_id', $this->customer->getGroupId());
 		} elseif (isset($this->session->data['guest']) && isset($this->session->data['guest']['customer_group_id'])) {
 			$this->config->set('config_customer_group_id', $this->session->data['guest']['customer_group_id']);
 		}
