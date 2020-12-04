@@ -31,8 +31,6 @@ class ModelCustomerCustomer extends Model {
 			$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET salt = '" . $this->ssodb->escape($salt = token(9)) . "', password = '" . $this->ssodb->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "' WHERE user_id = '" . (int)$customer_id . "'");
 		}
 
-		// $this->ssodb->query("DELETE FROM " . SSODB_PREFIX . "address WHERE user_id = '" . (int)$customer_id . "'");
-
 		if (isset($data['address'])) {
 			foreach ($data['address'] as $address) {
 				if ($address['address_id'] == '') {
