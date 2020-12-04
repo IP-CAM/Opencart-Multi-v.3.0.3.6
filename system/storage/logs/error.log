@@ -264,3 +264,7 @@
 2020-12-01 20:37:28 - PHP Notice:  Undefined index: address_id in /html/system/library/cart/customer.php on line 63
 2020-12-01 20:37:36 - PHP Notice:  Undefined index: address_id in /html/system/library/cart/customer.php on line 63
 >>>>>>> 748e359a0dc17c06e752675be304113c51b2fea6
+2020-12-04 12:23:56 - PHP Notice:  Undefined index: customer_id in /html/catalog/model/account/customer.php on line 10
+2020-12-04 12:23:56 - PHP Notice:  Undefined index: customer_id in /html/catalog/model/account/customer.php on line 13
+2020-12-04 12:24:48 - PHP Notice:  Undefined index: user_id in /html/catalog/model/account/customer.php on line 10
+2020-12-04 12:24:48 - PHP Notice:  Undefined index: customer_id in /html/catalog/model/account/customer.php on line 13

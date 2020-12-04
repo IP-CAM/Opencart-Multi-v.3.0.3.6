@@ -31,16 +31,16 @@ class ModelCustomerCustomer extends Model {
 			$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET salt = '" . $this->ssodb->escape($salt = token(9)) . "', password = '" . $this->ssodb->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "' WHERE user_id = '" . (int)$customer_id . "'");
 		}
 
-		$this->ssodb->query("DELETE FROM " . SSODB_PREFIX . "address WHERE user_id = '" . (int)$customer_id . "'");
-
 		if (isset($data['address'])) {
 			foreach ($data['address'] as $address) {
-				$this->ssodb->query("INSERT INTO " . SSODB_PREFIX . "address SET address_id = '" . (int)$address['address_id'] . "', user_id = '" . (int)$customer_id . "', firstname = '" . $this->ssodb->escape($address['firstname']) . "', lastname = '" . $this->ssodb->escape($address['lastname']) . "', company = '" . $this->ssodb->escape($address['company']) . "', address_1 = '" . $this->ssodb->escape($address['address_1']) . "', address_2 = '" . $this->ssodb->escape($address['address_2']) . "', city = '" . $this->ssodb->escape($address['city']) . "', postcode = '" . $this->ssodb->escape($address['postcode']) . "', country_id = '" . (int)$address['country_id'] . "', zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->ssodb->escape(isset($address['custom_field']) ? json_encode($address['custom_field']) : json_encode(array())) . "'");
-
+				if ($address['address_id'] == '') {
+					$this->ssodb->query("INSERT INTO " . SSODB_PREFIX . "address SET user_id = '" . (int)$customer_id . "', firstname = '" . $this->ssodb->escape($address['firstname']) . "', lastname = '" . $this->ssodb->escape($address['lastname']) . "', company = '" . $this->ssodb->escape($address['company']) . "', address_1 = '" . $this->ssodb->escape($address['address_1']) . "', address_2 = '" . $this->ssodb->escape($address['address_2']) . "', city = '" . $this->ssodb->escape($address['city']) . "', postcode = '" . $this->ssodb->escape($address['postcode']) . "', country_id = '" . (int)$address['country_id'] . "', zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->ssodb->escape(isset($address['custom_field']) ? json_encode($address['custom_field']) : json_encode(array())) . "'");
+				}
+				else {
+					$this->ssodb->query("UPDATE " . SSODB_PREFIX . "address SET user_id = '" . (int)$customer_id . "', firstname = '" . $this->ssodb->escape($address['firstname']) . "', lastname = '" . $this->ssodb->escape($address['lastname']) . "', company = '" . $this->ssodb->escape($address['company']) . "', address_1 = '" . $this->ssodb->escape($address['address_1']) . "', address_2 = '" . $this->ssodb->escape($address['address_2']) . "', city = '" . $this->ssodb->escape($address['city']) . "', postcode = '" . $this->ssodb->escape($address['postcode']) . "', country_id = '" . (int)$address['country_id'] . "', zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->ssodb->escape(isset($address['custom_field']) ? json_encode($address['custom_field']) : json_encode(array())) . "' WHERE address_id = " . (int)$address['address_id']);
+				}
 				if (isset($address['default'])) {
-					$address_id = $this->db->getLastId();
-
-					$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET address_id = '" . (int)$address_id . "' WHERE user_id = '" . (int)$customer_id . "'");
+					$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET ship_address_id = '" . (int)$address['address_id'] . "' WHERE user_id = '" . (int)$customer_id . "'");
 				}
 			}
 		}
