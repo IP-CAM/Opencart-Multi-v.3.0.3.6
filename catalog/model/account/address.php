@@ -6,7 +6,7 @@ class ModelAccountAddress extends Model {
 		$address_id = $this->ssodb->getLastId();
 
 		if (!empty($data['default'])) {
-			$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET ship_address_id = '" . (int)$address_id . "' WHERE user_id = '" . (int)$user_id . "'");
+			$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET ship_address_id = '" . (int)$address_id . "', bill_address_id = '" . (int)$address_id . "' WHERE user_id = '" . (int)$user_id . "'");
 		}
 
 		return $address_id;
@@ -16,7 +16,7 @@ class ModelAccountAddress extends Model {
 		$this->ssodb->query("UPDATE " . SSODB_PREFIX . "address SET firstname = '" . $this->ssodb->escape($data['firstname']) . "', lastname = '" . $this->ssodb->escape($data['lastname']) . "', company = '" . $this->ssodb->escape($data['company']) . "', address_1 = '" . $this->ssodb->escape($data['address_1']) . "', address_2 = '" . $this->ssodb->escape($data['address_2']) . "', postcode = '" . $this->ssodb->escape($data['postcode']) . "', city = '" . $this->ssodb->escape($data['city']) . "', zone_id = '" . (int)$data['zone_id'] . "', custom_field = '" . $this->ssodb->escape(isset($data['custom_field']['address']) ? json_encode($data['custom_field']['address']) : '') . "' WHERE address_id  = '" . (int)$address_id . "' AND user_id = '" . (int)$this->customer->getId() . "'");
 
 		if (!empty($data['default'])) {
-			$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET ship_address_id = '" . (int)$address_id . "' WHERE user_id = '" . (int)$this->customer->getId() . "'");
+			$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET ship_address_id = '" . (int)$address_id . "', bill_address_id = '" . (int)$address_id . "' WHERE user_id = '" . (int)$this->customer->getId() . "'");
 		}
 	}
 

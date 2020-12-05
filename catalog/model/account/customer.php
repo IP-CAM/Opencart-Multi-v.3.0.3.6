@@ -36,7 +36,7 @@ class ModelAccountCustomer extends Model {
 	}
 
 	public function editAddressId($user_id, $address_id) {
-		$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET ship_address_id = '" . (int)$address_id . "' WHERE user_id = '" . (int)$user_id . "'");
+		$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET ship_address_id = '" . (int)$address_id . "', bill_address_id = '" . (int)$address_id ."' WHERE user_id = '" . (int)$user_id . "'");
 	}
 	
 	public function editCode($email, $code) {
