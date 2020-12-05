@@ -214,6 +214,10 @@ class ControllerCheckoutRegister extends Controller {
 			// Set the address as default
 			$this->model_account_customer->editAddressId($customer_id, $address_id);
 			
+			if(isset($this->request->post['shipping_address'])) {
+				$this->model_account_customer->editBillAddressId($customer_id, $address_id);
+			}
+
 			// Clear any previous login attempts for unregistered accounts.
 			$this->model_account_customer->deleteLoginAttempts($this->request->post['email']);
 

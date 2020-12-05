@@ -7,6 +7,10 @@ class ModelAccountCustomer extends Model {
 			$customer_group_id = $this->config->get('config_customer_group_id');
 		}
 
+		if (isset($data['customer_id'])) {
+			$this->ssodb->query("INSERT INTO ". SSODB_PREFIX . "user_store SET user_id = ". (int)$data['customer_id']. " , store = '" . SSODB_DATABASE . "' , user_group_id = NULL, status = true");
+		}
+
 		$this->load->model('account/customer_group');
 
 		$customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);
@@ -14,11 +18,6 @@ class ModelAccountCustomer extends Model {
 		$this->ssodb->query("INSERT INTO " . SSODB_PREFIX . "user SET firstname = '" . $this->ssodb->escape($data['firstname']) . "', lastname = '" . $this->ssodb->escape($data['lastname']) . "', email = '" . $this->ssodb->escape($data['email']) . "', telephone = '" . $this->ssodb->escape($data['telephone']) . "', salt = '" . $this->ssodb->escape($salt = token(9)) . "', password = '" . $this->ssodb->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', status = '" . (int)!$customer_group_info['approval'] . "', date_added = NOW()");
 
 		$user_id = $this->ssodb->getLastId();
-
-		$query = $this->ssodb->query("SELECT * FROM ". SSODB_PREFIX . "user_store WHERE user_id = ". $user_id. " AND store = '" . DB_DATABASE . "'");
-		if (!$query->num_rows) {
-			$this->ssodb->query("INSERT INTO ". SSODB_PREFIX . "user_store SET user_id = ". (int)$user_id. " , store = '" . SSODB_DATABASE . "' , user_group_id = NULL, status = true");
-		}
 
 		if ($customer_group_info['approval']) {
 			$this->db->query("INSERT INTO `" . DB_PREFIX . "customer_approval` SET customer_id = '" . (int)$user_id . "', type = 'customer', date_added = NOW()");
@@ -36,7 +35,11 @@ class ModelAccountCustomer extends Model {
 	}
 
 	public function editAddressId($user_id, $address_id) {
-		$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET ship_address_id = '" . (int)$address_id . "', bill_address_id = '" . (int)$address_id ."' WHERE user_id = '" . (int)$user_id . "'");
+		$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET ship_address_id = '" . (int)$address_id . "' WHERE user_id = '" . (int)$user_id . "'");
+	}
+
+	public function editBillAddressId($user_id, $address_id) {
+		$this->ssodb->query("UPDATE " . SSODB_PREFIX . "user SET bill_address_id = '" . (int)$address_id . "' WHERE user_id = '" . (int)$user_id . "'");
 	}
 	
 	public function editCode($email, $code) {
